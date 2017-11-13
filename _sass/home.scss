@@ -1,93 +1,90 @@
 .home {
   margin-top: px_to_em(88px);
+
   & .block1 {
     background-image: url("/assets/img/home-block1.jpg");
     background-size: cover;
     background-position: top center;
     padding: px_to_em(120px) 0 px_to_em(150px);
+ 
     & .frame {
       border: px_to_em(4px) solid $orangey-yellow;
       height: px_to_em(440px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      & p {
+      text-align: center;
+
+      & h1 {
         font-family: 'Amatic SC', cursive;
+        display: block;
+        color: $white;
         font-size: px_to_em(110px);
         font-weight: bold;
+        margin-top: 60px;
         text-transform: uppercase;
-        line-height: 0.87;
-        text-align: center;
-        color: $white;
         white-space: nowrap;
       }
+
       & .play {
-        background: url(/assets/img/home-play.svg) no-repeat;
+        display: block;
+        margin: 30px auto 0;
         width: px_to_em(118px);
-        height: px_to_em(118px);
-        border: none;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
+
     .modal-dialog {
-      max-width: 724px;
-    }
-    #mobile-video {
-      display: none;
-    }
-  }
-  & .doar {
-    width: px_to_em(283px);
-    height: px_to_em(89px);
-    background-color: $orangey-yellow;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: px_to_em(-47px) auto 0 auto;
-    & p {
-      font-family: 'Amatic SC', cursive;
-      font-size: px_to_em(52px);
-      font-weight: bold;
-      text-transform: uppercase;
-      color: #000000;
-      margin: 0;
+      max-width: 90%;
     }
   }
 
-  @media (max-width: 767px) {
-    .block1 .frame p {
-      font-size: px_to_em(66px);
-      & span:before {
-        content: "\a";
-        white-space: pre;
+  & .doar {
+    background-color: $orangey-yellow;
+    color: $black;
+    display: block;
+    font-family: 'Amatic SC', cursive;
+    font-size: px_to_em(52px);
+    font-weight: bold;
+    margin: -39px auto 0 auto;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: px_to_em(100px);
+  }
+}
+
+@media (max-width: 767px) {
+  .home {
+    .block1 {
+      & .frame {
+        & h1 {
+          font-size: px_to_em(72px);
+          margin-top: 40px;
+
+          & span:before {
+            content: "\a";
+            white-space: pre;
+          }
+        }
+
+        & .play img {
+          width: px_to_em(80px);
+        }
+      }
+
+      & .doar {
+        font-size: px_to_em(40px);
+        width: 70%;
       }
     }
-    .block1 .frame img {
-      width: px_to_em(68px);
-      height: px_to_em(68px);
-    }
-    .block1 .doar {
-      width: px_to_em(255px);
-      height: px_to_em(57px);
-    }
-    .block1 .doar p {
-      font-size: px_to_em(28px);
-    }
+
     .modal .modal-dialog {
       max-width: auto;
     }
     .modal-body iframe {
       width: 100% !important;
     }
-    #desktop-video {
-      display: none;
-    }
-    #mobile-video {
-      display: inline !important;
-    }
   }
-
-
 }
 
